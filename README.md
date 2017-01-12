@@ -1,6 +1,18 @@
 Laptop
 ======
 
+## How to install
+
+````
+cd ~/
+git clone https://github.com/Drawbotics/laptop.git
+````
+
+Then, open `.laptop.local` which is your extra installs. Review it, uncomment github related lines if you want to do it now, and update the list of apps you want to install at the top.
+
+
+==========
+
 Laptop is a script to set up an macOS laptop for web development.
 
 It can be run multiple times on the same machine safely.
