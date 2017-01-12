@@ -109,6 +109,7 @@ brew "the_silver_searcher"
 brew "tmux"
 brew "vim"
 brew "zsh"
+brew "iterm2"
 
 # Heroku
 brew "heroku-toolbelt"
@@ -121,7 +122,7 @@ brew "hub"
 brew "imagemagick"
 
 # Testing
-brew "qt"
+brew "qt5"
 
 # Programming languages
 brew "libyaml" # should come after openssl
@@ -154,6 +155,8 @@ gem update --system
 gem_install_or_update 'bundler'
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
+
+gem_install_or_update 'rails'
 
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
