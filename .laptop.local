@@ -1,0 +1,62 @@
+brew install caskroom/cask/brew-cask
+
+brew cask install atom
+brew cask install github-desktop
+brew cask install google-chrome
+brew cask install slack
+brew cask install iterm2
+brew cask install spotify
+brew cask install steam
+brew cask install visual-studio-code
+brew cask install postman
+
+
+# OSX preferences
+#Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+
+#Set a shorter Delay until key repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+#Add a context menu item for showing the Web Inspector in web views
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+#Show the ~/Library folder
+chflags nohidden ~/Library
+
+#Store screenshots in subfolder on desktop
+mkdir ~/Desktop/Screenshots
+defaults write com.apple.screencapture location ~/Desktop/Screenshots
+
+sudo scutil --set HostName YOUR_HOSTNAME
+
+# Github
+#ssh-keygen -t rsa -C "YOUR_EMAIL"
+
+# Copy ssh key to github.com
+#vim ~/.ssh/id_rsa.pub
+
+# Test connection
+#ssh -T git@github.com
+
+# Set git config values
+#git config --global user.name "YOUR_NAME"
+#git config --global user.email "YOUR_EMAIL"
+#git config --global github.user YOUR_USERNAME
+#git config --global github.token YOUR_TOKEN
+
+git config --global color.ui true
+
+# Custom install for platform gem issues with macOS
+brew uninstall v8
+gem uninstall libv8
+brew install v8
+gem install therubyracer
+gem install libv8 -v '3.16.14.5' -- --with-system-v8
+
+brew tap homebrew/dupes
+brew install libxml2 libxslt libiconv
+gem install nokogiri -- --with-iconv-dir=/usr/local/Cellar/libiconv/VERSION/
+
+gem install capybara-webkit -v '0.9.0'
+

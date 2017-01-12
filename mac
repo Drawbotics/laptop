@@ -158,8 +158,8 @@ bundle config --global jobs $((number_of_cores - 1))
 
 gem_install_or_update 'rails'
 
-if [ -f "$HOME/.laptop.local" ]; then
-  fancy_echo "Running your customizations from ~/.laptop.local ..."
+if [ -f "$HOME/laptop/.laptop.local" ]; then
+  fancy_echo "Running your customizations from ~/laptop/.laptop.local ..."
   # shellcheck disable=SC1090
-  . "$HOME/.laptop.local"
+  . "$HOME/laptop/.laptop.local"
 fi
